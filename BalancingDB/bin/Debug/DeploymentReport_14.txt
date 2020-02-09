@@ -1,0 +1,29 @@
+﻿** Highlights
+     Tables that will be rebuilt
+       None
+     Clustered indexes that will be dropped
+       None
+     Clustered indexes that will be created
+       None
+     Possible data issues
+       The column [dbo].[Incoming_History].[ADTId] is being dropped, data loss could occur.
+
+** User actions
+     Drop
+       unnamed constraint on [dbo].[Incoming_History] (Foreign Key)
+       [dbo].[CK_ABP_V2Id_ImportExportIndicator_CorrectValue] (Check Constraint)
+       [dbo].[CK_ACE_V4_ProductionConsumptionFlag_CorrectValue] (Check Constraint)
+       [dbo].[CK_APD_V8Id_ProductionConsumptionFlag_CorrectValue] (Check Constraint)
+     Alter
+       [dbo].[Incoming_History] (Table)
+     Create
+       [dbo].[CK_ABP_V2Id_ImportExportIndicator_CorrectValue] (Check Constraint)
+       [dbo].[CK_ACE_V4_ProductionConsumptionFlag_CorrectValue] (Check Constraint)
+       [dbo].[CK_APD_V8Id_ProductionConsumptionFlag_CorrectValue] (Check Constraint)
+
+** Supporting actions
+     Refresh
+       [dbo].[SP_Incoming_History] (Procedure)
+
+The column [dbo].[Incoming_History].[ADTId] is being dropped, data loss could occur.
+

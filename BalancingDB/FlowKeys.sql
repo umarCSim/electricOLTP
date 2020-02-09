@@ -1,0 +1,7 @@
+﻿CREATE TABLE [dbo].[FlowKeys]
+(
+	[FlowKeyId] INT NOT NULL PRIMARY KEY IDENTITY(1,1),
+	[FlowId] VARCHAR(8) NOT NULL, 
+    [FK_FileHeaderId] INT NOT NULL FOREIGN KEY REFERENCES AAA(FileHeaderId), 
+    [AgentId] INT NULL
+)

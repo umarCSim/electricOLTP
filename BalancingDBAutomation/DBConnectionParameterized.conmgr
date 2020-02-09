@@ -1,0 +1,19 @@
+﻿<?xml version="1.0"?>
+<DTS:ConnectionManager xmlns:DTS="www.microsoft.com/SqlServer/Dts"
+  DTS:ObjectName="DBConnectionParameterized"
+  DTS:DTSID="{9B538B66-4DF3-4BE8-B46A-45E4F8D20D1A}"
+  DTS:CreationName="OLEDB">
+  <DTS:PropertyExpression
+    DTS:Name="ConnectionString">@[$Project::ConnectionString]</DTS:PropertyExpression>
+  <DTS:ObjectData>
+    <DTS:ConnectionManager
+      DTS:ConnectionString="Data Source=WIN-VFUI1THQN2P;User ID=DBProject;Initial Catalog=BalancingDB;Provider=SQLNCLI11.1;Auto Translate=False;connection string: data source=WIN-VFUI1THQN2P;">
+      <DTS:Password
+        DTS:Name="Password"
+        Sensitive="1"
+        p4:Salt="OZUejgX301o="
+        p4:IV="/NBfIXgh/GP5P2yKvkSFQQ=="
+        p4:Algorithm="http://www.w3.org/2001/04/xmlenc#aes256-cbc" xmlns:p4="www.microsoft.com/SqlServer/SSIS">JeoGUrdzsmFbrvlPbRPn3Jw20NpVcE0nIDIxfLW4NRi5DQKXqWLCEB3xI4uxkBCKvP6yw8iFTnhJI+KPvRImi9gNES/3lnCIAp+Otoe+LPMhEGps/6J/KzF6cPF1/oK2q5iJUe126GI/90AqOxOVtUo8zieSQ8+gvhzzu++rSWQ=</DTS:Password>
+    </DTS:ConnectionManager>
+  </DTS:ObjectData>
+</DTS:ConnectionManager>

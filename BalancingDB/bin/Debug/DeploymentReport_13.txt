@@ -1,0 +1,26 @@
+﻿** Highlights
+     Tables that will be rebuilt
+       None
+     Clustered indexes that will be dropped
+       None
+     Clustered indexes that will be created
+       None
+     Possible data issues
+       None
+
+** User actions
+     Drop
+       [dbo].[CK_ABP_V2Id_ImportExportIndicator_CorrectValue] (Check Constraint)
+       [dbo].[CK_ACE_V4_ProductionConsumptionFlag_CorrectValue] (Check Constraint)
+       [dbo].[CK_APD_V8Id_ProductionConsumptionFlag_CorrectValue] (Check Constraint)
+     Alter
+       [dbo].[Incoming_History] (Table)
+     Create
+       Foreign Key: unnamed constraint on [dbo].[Incoming_History] (Foreign Key)
+       [dbo].[CK_ABP_V2Id_ImportExportIndicator_CorrectValue] (Check Constraint)
+       [dbo].[CK_ACE_V4_ProductionConsumptionFlag_CorrectValue] (Check Constraint)
+       [dbo].[CK_APD_V8Id_ProductionConsumptionFlag_CorrectValue] (Check Constraint)
+
+** Supporting actions
+     Refresh
+       [dbo].[SP_Incoming_History] (Procedure)

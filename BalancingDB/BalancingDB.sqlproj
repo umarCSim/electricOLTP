@@ -1,0 +1,155 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003" ToolsVersion="4.0">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <Name>BalancingDB</Name>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectVersion>4.1</ProjectVersion>
+    <ProjectGuid>{c4f115e7-0634-4254-9864-61663da72883}</ProjectGuid>
+    <DSP>Microsoft.Data.Tools.Schema.Sql.Sql130DatabaseSchemaProvider</DSP>
+    <OutputType>Database</OutputType>
+    <RootPath>
+    </RootPath>
+    <RootNamespace>BalancingDB</RootNamespace>
+    <AssemblyName>BalancingDB</AssemblyName>
+    <ModelCollation>1033, CI</ModelCollation>
+    <DefaultFileStructure>BySchemaAndSchemaType</DefaultFileStructure>
+    <DeployToDatabase>True</DeployToDatabase>
+    <TargetFrameworkVersion>v4.6.1</TargetFrameworkVersion>
+    <TargetLanguage>CS</TargetLanguage>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <SqlServerVerification>False</SqlServerVerification>
+    <IncludeCompositeObjects>True</IncludeCompositeObjects>
+    <TargetDatabaseSet>True</TargetDatabaseSet>
+    <GenerateCreateScript>True</GenerateCreateScript>
+    <RunPostBuildEvent>Always</RunPostBuildEvent>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <OutputPath>bin\Release\</OutputPath>
+    <BuildScriptName>$(MSBuildProjectName).sql</BuildScriptName>
+    <TreatWarningsAsErrors>False</TreatWarningsAsErrors>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <DefineDebug>false</DefineDebug>
+    <DefineTrace>true</DefineTrace>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <OutputPath>bin\Debug\</OutputPath>
+    <BuildScriptName>$(MSBuildProjectName).sql</BuildScriptName>
+    <TreatWarningsAsErrors>false</TreatWarningsAsErrors>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <DefineDebug>true</DefineDebug>
+    <DefineTrace>true</DefineTrace>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup>
+    <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">11.0</VisualStudioVersion>
+    <!-- Default to the v11.0 targets path if the targets file for the current VS version is not found -->
+    <SSDTExists Condition="Exists('$(MSBuildExtensionsPath)\Microsoft\VisualStudio\v$(VisualStudioVersion)\SSDT\Microsoft.Data.Tools.Schema.SqlTasks.targets')">True</SSDTExists>
+    <VisualStudioVersion Condition="'$(SSDTExists)' == ''">11.0</VisualStudioVersion>
+  </PropertyGroup>
+  <Import Condition="'$(SQLDBExtensionsRefPath)' != ''" Project="$(SQLDBExtensionsRefPath)\Microsoft.Data.Tools.Schema.SqlTasks.targets" />
+  <Import Condition="'$(SQLDBExtensionsRefPath)' == ''" Project="$(MSBuildExtensionsPath)\Microsoft\VisualStudio\v$(VisualStudioVersion)\SSDT\Microsoft.Data.Tools.Schema.SqlTasks.targets" />
+  <ItemGroup>
+    <Folder Include="Properties" />
+    <Folder Include="PostDeployment" />
+    <Folder Include="Programmability" />
+    <Folder Include="Sequences" />
+    <Folder Include="Users" />
+    <Folder Include="Queue" />
+    <Folder Include="Views" />
+    <Folder Include="Users\Server_DB_Users" />
+    <Folder Include="Views\Flows" />
+    <Folder Include="Views\Flows\Views" />
+    <Folder Include="Views\Flows\Triggers" />
+    <Folder Include="Views\Flows\Views\FlowViews" />
+    <Folder Include="Views\Flows\Views\FlowViews\Incoming" />
+    <Folder Include="Views\Flows\Views\FlowViews\WebApplication" />
+    <Folder Include="Views\Flows\Triggers\FlowViewsTriggers" />
+    <Folder Include="Views\FlowSettings" />
+    <Folder Include="Views\Flows\Views\FlowViews\WebApplication\Incoming" />
+    <Folder Include="Views\Flows\Views\FlowViews\WebApplication\Shared" />
+  </ItemGroup>
+  <ItemGroup>
+    <Build Include="AU1_V1.sql" />
+    <Build Include="AU2_V1.sql" />
+    <Build Include="CED_V1.sql" />
+    <Build Include="IUD_V1.sql" />
+    <Build Include="PR9_V1.sql" />
+    <Build Include="RA4_V3.sql" />
+    <Build Include="SP9_V1.sql" />
+    <Build Include="SR3_V1.sql" />
+    <Build Include="AAA.sql" />
+    <Build Include="ZZZ.sql" />
+    <Build Include="Programmability\SP_InsertHeader.sql" />
+    <Build Include="Programmability\SP_InsertTable_SSIS.sql" />
+    <Build Include="Programmability\SP_InsertFlow.sql" />
+    <Build Include="Sequences\Sequence_Outgoing_Flow_Header.sql" />
+    <Build Include="Sequences\Sequence_Outgoing_Flow_Filename.sql" />
+    <Build Include="Programmability\SP_GetSequenceValue.sql" />
+    <Build Include="Programmability\SP_GetFilename.sql" />
+    <Build Include="Programmability\SP_SetNextQueuedItem_Outgoing.sql" />
+    <Build Include="Queue\Queue_Outgoing.sql" />
+    <Build Include="Queue\Queue_Outgoing_History.sql" />
+    <Build Include="Queue\Queue_Outgoing_Trigger.sql" />
+    <Build Include="Queue\Incoming_History.sql" />
+    <Build Include="Users\Server_DB_Users\Users.sql" />
+    <Build Include="Users\Server_DB_Users\ServerLogins.sql" />
+    <Build Include="Programmability\SP_InsertTable_SSIS_Large.sql" />
+    <Build Include="Programmability\SP_Incoming_History.sql" />
+    <Build Include="ResponseCodeInfo.sql" />
+    <Build Include="Programmability\SP_ValidateHeader.sql" />
+    <Build Include="Programmability\SP_ValidateFooter.sql" />
+    <Build Include="Programmability\SP_InsertFooter.sql" />
+    <Build Include="Programmability\SP_ValidateBody.sql" />
+    <Build Include="Programmability\SP_ResetNextSequenceValue.sql" />
+    <Build Include="Views\Flows\Views\FlowViews\Incoming\CRA_R0121001_Incoming_View.sql" />
+    <Build Include="Views\Flows\Views\FlowViews\Incoming\CRA_R0141001_Incoming_View.sql" />
+    <Build Include="Views\FlowSettings\FlowSettings.sql" />
+    <Build Include="Views\FlowSettings\FlowSettings_Trigger.sql" />
+    <Build Include="Views\FlowSettings\FlowSettings_View.sql" />
+    <Build Include="Views\Flows\Views\FlowViews\WebApplication\Shared\FlowSummary_View.sql" />
+    <Build Include="Views\Flows\Views\FlowViews\WebApplication\Shared\HeaderDetail_View.sql" />
+    <Build Include="Views\Flows\Views\FlowViews\WebApplication\Shared\FileProcessingDetail_View.sql" />
+    <Build Include="Views\Flows\Views\FlowViews\WebApplication\Shared\FooterDetail_View.sql" />
+    <Build Include="ADT_V1.sql" />
+    <Build Include="Lkup_FlowTables.sql" />
+    <Build Include="Lkup_Flow_Package.sql" />
+    <Build Include="Lkup_Flows.sql" />
+    <Build Include="FlowKeys.sql" />
+    <Build Include="PD6_V1.sql" />
+    <Build Include="RRH_V5.sql" />
+  </ItemGroup>
+  <ItemGroup>
+    <PostDeploy Include="PostDeployment\Script.PostDeployment.sql" />
+  </ItemGroup>
+  <ItemGroup>
+    <ArtifactReference Include="C:\Program Files (x86)\Microsoft Visual Studio\2017\Community\Common7\IDE\Extensions\Microsoft\SQLDB\Extensions\SqlServer\130\SqlSchemas\master.dacpac">
+      <HintPath>C:\Program Files (x86)\Microsoft Visual Studio\2017\Community\Common7\IDE\Extensions\Microsoft\SQLDB\Extensions\SqlServer\130\SqlSchemas\master.dacpac</HintPath>
+      <SuppressMissingDependenciesErrors>False</SuppressMissingDependenciesErrors>
+      <DatabaseVariableLiteralValue>master</DatabaseVariableLiteralValue>
+    </ArtifactReference>
+    <ArtifactReference Include="C:\Program Files (x86)\Microsoft Visual Studio\2017\Community\Common7\IDE\Extensions\Microsoft\SQLDB\Extensions\SqlServer\130\SqlSchemas\msdb.dacpac">
+      <HintPath>C:\Program Files (x86)\Microsoft Visual Studio\2017\Community\Common7\IDE\Extensions\Microsoft\SQLDB\Extensions\SqlServer\130\SqlSchemas\msdb.dacpac</HintPath>
+      <SuppressMissingDependenciesErrors>False</SuppressMissingDependenciesErrors>
+      <DatabaseVariableLiteralValue>msdb</DatabaseVariableLiteralValue>
+    </ArtifactReference>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="BalancingDB.sqlproj.user" />
+    <None Include="BalancingDB.dbmdl" />
+    <None Include="BalancingDB.jfm" />
+    <None Include="BalancingDB.publish.xml" />
+    <None Include="BalancingDB_ForDocker.publish.xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <RefactorLog Include="BalancingDB.refactorlog" />
+  </ItemGroup>
+</Project>

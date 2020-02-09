@@ -1,0 +1,17 @@
+﻿CREATE VIEW [dbo].[HeaderDetail_View]
+AS
+SELECT
+[FileHeaderId]
+,[RecordType]
+,[FileType]
+,[MessageRole]
+,[CreationTime]
+,[FromRoleCode]
+,[FromParticipantId]
+,[ToRoleCode]
+,[ToParticipantId]
+,[SequenceNumber]
+,[TestDataFlag]
+,[FileSent]
+,[TransitType]
+FROM [AAA]
